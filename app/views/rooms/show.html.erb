@@ -1,0 +1,14 @@
+<%= link_to 'Back', rooms_path %>
+<p>
+  <strong>Title:</strong>
+  <%= @room.title %>
+</p>
+<p>
+  <%= render @messages %>
+</p>
+<%= form_with model: [@room, Message.new] do |form| %>
+  <%= form.text_field :content %>
+  <%= form.submit %>
+<% end %>
+
+
